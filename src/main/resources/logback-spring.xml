@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+    <!--添加日志存储器,控制台-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <!--添加本地的info日志存储-->
+    <appender name="fileInLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--添加路径-->
+            <fileNamePattern>C:/Users/刘军辉/Desktop/wx_order_log/info.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--添加本地的error日志存储-->
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--添加路径-->
+            <fileNamePattern>C:/Users/刘军辉/Desktop/wx_order_log/error.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--指明配置项用在哪-->
+    <root level="INFO">
+        <!--引用日志存储器-->
+        <appender-ref ref="consoleLog"/>
+        <appender-ref ref="fileInLog"/>
+        <appender-ref ref="fileErrorLog"/>
+    </root>
+</configuration>

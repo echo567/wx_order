@@ -1,4 +1,4 @@
-package cn.junhui.wx_order;
+package cn.junhui.wx_order.Enums;
 
 import lombok.Getter;
 

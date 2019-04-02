@@ -1,6 +1,6 @@
 package cn.junhui.wx_order.service.impl;
 
-import cn.junhui.wx_order.ProductStatusEnum;
+import cn.junhui.wx_order.Enums.ProductStatusEnum;
 import cn.junhui.wx_order.domain.ProductInfo;
 import cn.junhui.wx_order.repository.ProductInfoRepository;
 import cn.junhui.wx_order.service.ProductInfoService;

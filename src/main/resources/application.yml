@@ -6,6 +6,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
+server:
+  servlet:
+    context-path: /sell
+  port: 80
+
 #logging:
 #  pattern:
 #    console: "%d - %msg%n"

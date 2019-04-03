@@ -13,7 +13,6 @@ import java.math.BigDecimal;
  */
 @Entity
 @Data
-@DynamicUpdate
 public class ProductInfo {
 
     @Id//主键，但不自增

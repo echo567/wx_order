@@ -5,6 +5,8 @@ import lombok.Getter;
 /**
  * 军辉
  * 2019-04-02 11:41
+ * <p>
+ * 商品是否在架的状态
  */
 @Getter //只自动生成getter方法
 public enum ProductStatusEnum {

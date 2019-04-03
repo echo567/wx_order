@@ -6,6 +6,8 @@ import lombok.Getter;
 /**
  * 军辉
  * 2019-04-02 21:13
+ *
+ * 返回前台的数据状态
  */
 @Getter
 public enum ResultStatusEnum {

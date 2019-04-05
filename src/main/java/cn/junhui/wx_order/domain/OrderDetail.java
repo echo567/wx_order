@@ -19,10 +19,13 @@ import java.util.Date;
 public class OrderDetail {
 
     @Id
+    //订单详情id
     private String detailId;
 
-    private String openID;
+    //主演订单id
+    private String orderId;
 
+    //商品id
     private String productId;
 
     private String productName;
@@ -41,5 +44,10 @@ public class OrderDetail {
     private Date updateTime;
 
     public OrderDetail() {
+    }
+
+    public OrderDetail(String productId, Integer productQuantity) {
+        this.productId = productId;
+        this.productQuantity = productQuantity;
     }
 }

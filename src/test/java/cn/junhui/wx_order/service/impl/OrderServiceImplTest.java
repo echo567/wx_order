@@ -2,10 +2,14 @@ package cn.junhui.wx_order.service.impl;
 
 import cn.junhui.wx_order.domain.OrderDetail;
 import cn.junhui.wx_order.dto.OrderDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -19,7 +23,9 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class OrderServiceImplTest {
+    private static String opedId = "微信id";
 
     @Autowired
     private OrderServiceImpl orderService;
@@ -53,18 +59,32 @@ public class OrderServiceImplTest {
 
     @Test
     public void findList() {
+
+        Pageable pageable = PageRequest.of(0, 5);
+        Page<OrderDTO> page = orderService.findList(opedId, pageable);
+        System.out.println("findList:" + page.getContent());
     }
 
     @Test
     public void cancel() {
+        OrderDTO orderDTO = orderService.findByOrderId("1554431034733419206");
+        OrderDTO result = orderService.cancel(orderDTO);
+        System.out.println("result:" + result);
+
     }
 
     @Test
     public void finish() {
+        OrderDTO orderDTO = orderService.findByOrderId("1554431034733419206");
+        OrderDTO result = orderService.finish(orderDTO);
+        System.out.println("result:" + result);
     }
 
     @Test
     public void paid() {
+        OrderDTO orderDTO = orderService.findByOrderId("1554431034733419206");
+        OrderDTO result = orderService.paid(orderDTO);
+        System.out.println("result:" + result);
     }
 
 

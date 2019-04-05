@@ -1,5 +1,6 @@
 package cn.junhui.wx_order.service;
 
+import cn.junhui.wx_order.domain.OrderDetail;
 import cn.junhui.wx_order.dto.OrderDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +13,7 @@ public interface OrderService {
 
     //创建订单
     OrderDTO create(OrderDTO orderDTO);
+
 
     //查询单个订单
     OrderDTO findByOrderId(String orderId);

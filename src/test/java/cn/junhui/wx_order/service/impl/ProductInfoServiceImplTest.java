@@ -29,7 +29,7 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void save() {
-        ProductInfo info = new ProductInfo("4", "测试4", new BigDecimal(10.69), 23, ProductStatusEnum.UP.getCode(), 2);
+        ProductInfo info = new ProductInfo("5", "测试4", new BigDecimal(10.69), 23, ProductStatusEnum.UP.getCode(), 2);
         infoService.save(info);
     }
 

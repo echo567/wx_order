@@ -30,7 +30,7 @@ public class OrderMaster {
     private String buyerAddress;
 
     //买家 微信的openID
-    private String buyerOpenId;
+    private String buyerOpenid;
 
     //订单 总金额
     private BigDecimal orderAmount;
@@ -47,5 +47,14 @@ public class OrderMaster {
 
 
     public OrderMaster() {
+    }
+
+    public OrderMaster(String orderId, String buyerName, String buyerPhone, String buyerAddress, String buyerOpenid, BigDecimal orderAmount) {
+        this.orderId = orderId;
+        this.buyerName = buyerName;
+        this.buyerPhone = buyerPhone;
+        this.buyerAddress = buyerAddress;
+        this.buyerOpenid = buyerOpenid;
+        this.orderAmount = orderAmount;
     }
 }

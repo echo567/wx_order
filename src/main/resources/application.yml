@@ -6,6 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
+  jackson:
+  #返回前台数据时，不返回为空的字段
+    default-property-inclusion: non_null
 server:
   servlet:
     context-path: /sell

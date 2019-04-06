@@ -3,6 +3,9 @@ package cn.junhui.wx_order.dto;
 import cn.junhui.wx_order.Enums.OrderStatusEnum;
 import cn.junhui.wx_order.Enums.PayStatusEnum;
 import cn.junhui.wx_order.domain.OrderDetail;
+import cn.junhui.wx_order.utils.serializer.DateToLongSerializer;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 import javax.persistence.Id;
@@ -16,6 +19,7 @@ import java.util.List;
  * dto:Data Transfer Object 数据传输对象,在各个层传输数据的时候使用的
  */
 @Data
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
 
 
@@ -39,8 +43,10 @@ public class OrderDTO {
     //支付状态 默认为0，未支付
     private Integer payStatus;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date createTime;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date updateTime;
 
     List<OrderDetail> orderDetailList;

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div th:replace="fragments/style :: css">
+</div>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>
+                        订单编号
+                    </th>
+                    <th>
+                        买家名称
+                    </th>
+                    <th>
+                        买家手机号
+                    </th>
+                    <th>
+                        买家地址
+                    </th>
+                    <th>
+                        买家openId
+                    </th>
+                    <th>
+                        订单总金额
+                    </th>
+                    <th>
+                        订单状态
+                    </th>
+                    <th>
+                        支付状态
+                    </th>
+                    <th>
+                        订单创建时间
+                    </th>
+                    <th>
+                        订单修改时间
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="order:${orderDTOPage.getContent()}">
+                    <td th:text="${order.getOrderId()}">
+                    </td>
+                    <td>
+                        [[${order.getBuyerName()}]]
+                    </td>
+                    <td>
+                        [[${order.getBuyerPhone()}]]
+                    </td>
+                    <td>
+                        [[${order.getBuyerAddress()}]]
+                    </td>
+
+                    <td>
+                        [[${order.getBuyerOpenid()}]]
+                    </td>
+                    <td>
+                        [[${order.getOrderAmount()}]]
+                    </td>
+                    <td>
+                        [[${order.getOrderStatus()}]]
+                        <!--订单状态
+                         NEW(0, "新订单"),
+                        FINISH(1, "已完成"),
+                         CANCEL(2, "已取消");-->
+                        <!--todo-->
+                    </td>
+                    <td>
+                        <!--支付状态-->
+                        [[${order.getPayStatus()}]]
+                        <!--todo-->
+                    </td>
+
+
+                    <td>
+                        [[${order.getCreateTime()}]]
+                    </td>
+                    <td>
+                        [[${order.getUpdateTime()}]]
+                    </td>
+
+
+                </tr>
+
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <li>
+                    <a href="#">Prev</a>
+                </li>
+                <li>
+                    <a href="#">1</a>
+                </li>
+                <li>
+                    <a href="#">2</a>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                </li>
+                <li>
+                    <a href="#">4</a>
+                </li>
+                <li>
+                    <a href="#">5</a>
+                </li>
+                <li>
+                    <a href="#">Next</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -9,15 +9,20 @@ spring:
   jackson:
   #返回前台数据时，不返回为空的字段
     default-property-inclusion: non_null
-server:
-  servlet:
-    context-path: /sell
-  port: 80
+  thymeleaf:
+    mode: HTML
+    cache: false
+    encoding: UTF-8
 
+
+
+server:
+#  servlet:
+#    context-path: /sell
+  port: 80
 #logging:
 #  pattern:
 #    console: "%d - %msg%n"
 #    file: D:/wv_order.log
     # 注释格式
-
 

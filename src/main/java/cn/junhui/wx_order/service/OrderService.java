@@ -18,7 +18,7 @@ public interface OrderService {
     //查询单个订单
     OrderDTO findByOrderId(String orderId);
 
-    //查询订单类表
+    //查询某个人的订单类表
     Page<OrderDTO> findList(String buyerOpenId, Pageable pageable);
 
     //取消订单
@@ -29,4 +29,7 @@ public interface OrderService {
 
     //支付订单
     OrderDTO paid(OrderDTO orderDTO);
+
+    //查询所有的订单类表
+    Page<OrderDTO> findList(Pageable pageable);
 }
